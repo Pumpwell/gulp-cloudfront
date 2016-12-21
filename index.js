@@ -18,6 +18,8 @@ module.exports = function(options) {
         }
 
         // Update the default root object once we've found the index.html file
+        console.log("file info", file);
+        if(!file.path) return callback(null, file);
         var filename = file.path.substr(options.dirRoot.length);
         if (filename.match(options.patternIndex)) {
 
